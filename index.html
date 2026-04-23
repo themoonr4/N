@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="THE MOON - World Class News Platform with AI-powered content, breaking news, and real-time updates">
+    <meta name="theme-color" content="#c00000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="THE MOON - World Class News">
+    <meta property="og:description" content="Latest news, AI-powered content, and real-time updates">
+    <meta property="og:image" content="assets/logo.svg">
+    <meta property="og:url" content="https://themoon.news">
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="apple-touch-icon" href="assets/logo.svg">
+    
+    <title>THE MOON | World Class News Platform</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-container">
+    
+    <!-- Header -->
+    <header class="header glass-effect">
+        <div class="header-left">
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="/" class="logo">
+                <img src="assets/logo.svg" alt="THE MOON" class="logo-img" loading="lazy">
+                <span class="logo-text">THE MOON</span>
+                <span class="logo-badge">βETA</span>
+            </a>
+        </div>
+        
+        <div class="header-right">
+            <div class="live-time" id="liveTime"></div>
+            <div class="translate-dropdown">
+                <select id="translateSelect">
+                    <option value="en">🇬🇧 English</option>
+                    <option value="hi">🇮🇳 हिंदी</option>
+                    <option value="es">🇪🇸 Español</option>
+                    <option value="fr">🇫🇷 Français</option>
+                </select>
+            </div>
+            <div class="theme-dropdown">
+                <select id="themeSelect">
+                    <option value="light">☀️ Light</option>
+                    <option value="dark">🌙 Dark</option>
+                    <option value="auto">⚡ Auto</option>
+                </select>
+            </div>
+            <button class="notification-btn" id="notificationBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge" id="notificationBadge">0</span>
+            </button>
+            <button class="login-btn" id="loginBtn">
+                <i class="fas fa-user-circle"></i>
+                <span>Login</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-newspaper"></i>
+                <span>THE MOON</span>
+            </div>
+            <button class="close-sidebar" id="closeSidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="smart-search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" id="smartSearchInput" placeholder="Search news, topics, or keywords...">
+            <button id="voiceSearchBtn" class="voice-search-btn">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <div id="searchResultMsg" class="search-result-msg"></div>
+        </div>
+        
+        <div class="user-profile-summary" id="userProfileSummary" style="display: none;">
+            <img src="assets/default-avatar.png" alt="Avatar" class="user-avatar">
+            <div class="user-info">
+                <div class="user-name" id="userName">Guest User</div>
+                <div class="user-stats">
+                    <span><i class="fas fa-bookmark"></i> <span id="userBookmarks">0</span></span>
+                    <span><i class="fas fa-eye"></i> <span id="userReadCount">0</span></span>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="home"><i class="fas fa-home"></i><span>🏠 Home</span></a>
+            <a href="#" class="nav-item" data-page="news"><i class="fas fa-newspaper"></i><span>📰 News</span></a>
+            <a href="#" class="nav-item" data-page="latest"><i class="fas fa-bolt"></i><span>⚡ Latest</span></a>
+            <a href="#" class="nav-item" data-page="trending"><i class="fas fa-fire"></i><span>🔥 Trending</span></a>
+            <a href="#" class="nav-item" data-page="study"><i class="fas fa-graduation-cap"></i><span>📚 Study</span></a>
+            <a href="#" class="nav-item" data-page="bookmarks"><i class="fas fa-bookmark"></i><span>🔖 Bookmarks</span></a>
+            <a href="#" class="nav-item" data-page="books"><i class="fas fa-book"></i><span>📚 BOOKS</span></a>
+            <a href="#" class="nav-item dropdown-toggle" id="workspaceToggle">
+                <i class="fas fa-briefcase"></i><span>💼 Workspace</span><i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu" id="workspaceMenu">
+                <a href="#" data-page="freelancing"><i class="fas fa-laptop-code"></i> Freelancing</a>
+                <a href="#" data-page="webdev"><i class="fab fa-react"></i> Web/App Dev</a>
+                <a href="#" data-page="dropshipping"><i class="fas fa-shipping-fast"></i> Dropshipping</a>
+                <a href="#" data-page="affiliate"><i class="fas fa-link"></i> Affiliate Marketing</a>
+                <a href="#" data-page="content"><i class="fas fa-pen-fancy"></i> Content Writing</a>
+                <a href="#" data-page="ai-tools"><i class="fas fa-robot"></i> AI Tools</a>
+            </div>
+            <a href="#" class="nav-item" data-page="settings"><i class="fas fa-cog"></i><span>⚙️ Settings</span></a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <div class="hero-section">
+            <div class="breaking-news">
+                <div class="breaking-label"><i class="fas fa-circle"></i> LIVE</div>
+                <div class="breaking-text" id="breakingText">India successfully lands on Moon's south pole</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="news-feed" id="newsFeed">
+                <div class="feed-header">
+                    <h2 class="section-title"><i class="fas fa-clock"></i> <span id="feedTitle">Latest Updates</span></h2>
+                    <div class="feed-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="tech">Tech</button>
+                        <button class="filter-btn" data-filter="politics">Politics</button>
+                        <button class="filter-btn" data-filter="business">Business</button>
+                        <button class="filter-btn" data-filter="sports">Sports</button>
+                    </div>
+                </div>
+                <div id="newsList"></div>
+                <div class="loader" id="loader" style="display: none;"><div class="spinner"></div><span>Loading...</span></div>
+                <button id="loadMoreBtn" class="load-more-btn">Load More <i class="fas fa-arrow-down"></i></button>
+            </div>
+
+            <div class="sidebar-right">
+                <div class="trending-card"><h3><i class="fas fa-fire"></i> Trending Now</h3><div id="trendingList"></div></div>
+                <div class="ai-card"><h3><i class="fas fa-robot"></i> 🤖 AI Curated</h3><div id="aiPicks"></div></div>
+                <div class="weather-card" id="weatherWidget"><h3><i class="fas fa-cloud-sun"></i> Weather</h3>
+                    <div class="weather-info"><div class="weather-temp" id="weatherTemp">--°C</div><div class="weather-location" id="weatherLocation">Loading...</div><div class="weather-desc" id="weatherDesc">--</div></div>
+                </div>
+                <div class="quote-card"><i class="fas fa-quote-left"></i><p id="quoteText">The only limit is your imagination.</p><span id="quoteAuthor">- Elon Musk</span></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-about"><h3>THE MOON</h3><p>Your trusted source for world-class news, AI-powered insights, and real-time updates.</p></div>
+            <div class="footer-links">
+                <div class="link-group"><h4>Company</h4><a href="#">About Us</a><a href="#">Careers</a><a href="#">Press</a></div>
+                <div class="link-group"><h4>Resources</h4><a href="#">Blog</a><a href="#">Developers</a><a href="#">API</a></div>
+                <div class="link-group"><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div>
+            </div>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a><a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="copyright"><p>© 2024 THE MOON. All rights reserved. Built with ❤️ for world-class journalism.</p></div>
+    </footer>
+</div>
+
+<!-- PWA Install -->
+<div class="pwa-install-container" id="pwaInstallContainer">
+    <div class="pwa-install-content">
+        <div class="pwa-install-text"><h4>📱 Install THE MOON App</h4><p>Get faster access, offline reading, and push notifications</p></div>
+        <button id="pwaInstallBtn">Install Now ⬇️</button>
+        <button id="pwaDismissBtn" class="dismiss-btn">Later</button>
+    </div>
+</div>
+
+<!-- Offline Indicator -->
+<div class="offline-indicator" id="offlineIndicator"><i class="fas fa-wifi"></i> You're offline - Showing cached content</div>
+
+<!-- Back to Top -->
+<button id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <div class="modal-header"><h2>Welcome to THE MOON</h2><span class="close-modal">&times;</span></div>
+        <div class="modal-body">
+            <div class="login-tabs"><button class="tab-btn active" data-tab="login">Login</button><button class="tab-btn" data-tab="signup">Sign Up</button></div>
+            <div id="loginTab" class="tab-content active">
+                <input type="tel" placeholder="Mobile Number" id="loginMobile"><input type="password" placeholder="Password" id="loginPassword">
+                <div class="login-options"><label><input type="checkbox"> Remember me</label><a href="#">Forgot Password?</a></div>
+                <button id="loginSubmitBtn">Login <i class="fas fa-arrow-right"></i></button>
+                <div class="social-login"><p>Or login with</p><div class="social-buttons"><button class="google-btn"><i class="fab fa-google"></i> Google</button><button class="facebook-btn"><i class="fab fa-facebook"></i> Facebook</button></div></div>
+            </div>
+            <div id="signupTab" class="tab-content">
+                <input type="text" placeholder="Full Name" id="signupName"><input type="tel" placeholder="Mobile Number" id="signupMobile">
+                <input type="email" placeholder="Email (Optional)" id="signupEmail"><input type="password" placeholder="Password" id="signupPassword">
+                <input type="password" placeholder="Confirm Password" id="signupConfirm"><button id="signupSubmitBtn">Create Account <i class="fas fa-user-plus"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Notification Modal -->
+<div class="modal" id="notificationModal">
+    <div class="modal-content">
+        <div class="modal-header"><h2><i class="fas fa-bell"></i> Notifications</h2><span class="close-modal" id="closeNotificationModal">&times;</span></div>
+        <div class="modal-body" id="notificationList"><div class="notification-item"><i class="fas fa-newspaper"></i><div class="notification-content"><p>Welcome to THE MOON! Stay tuned for latest updates.</p><span class="notification-time">Just now</span></div></div></div>
+    </div>
+</div>
+
+<script src="js/utils.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
