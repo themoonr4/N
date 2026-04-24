@@ -1,1 +1,9 @@
-
+{
+  "name": "the-moon",
+  "version": "1.0.0",
+  "description": "World Class News Platform",
+  "main": "index.html",
+  "scripts": { "start": "live-server --port=3000" },
+  "author": "THE MOON",
+  "license": "MIT"
+}
