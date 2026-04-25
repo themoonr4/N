@@ -8,8 +8,9 @@ let currentFilter = 'all';
 let currentBreakingIndex = 0;
 
 const newsData = {
-    en: [
-        { id: 1, title: "India Creates History! Chandrayaan-3 Successfully Lands on Moon", time: "2 mins ago", category: "tech", views: "125K", comments: "2.3K" },
+  en: [
+        { id: 1777142201686, title: "Test news from bot", time: "Just now", category: "tech", views: "0", comments: "0" },
+    { id: 1, title: "India Creates History! Chandrayaan-3 Successfully Lands on Moon", time: "2 mins ago", category: "tech", views: "125K", comments: "2.3K" },
         { id: 2, title: "PM Modi Announces $10 Billion AI Mission at G20 Summit", time: "15 mins ago", category: "politics", views: "89K", comments: "1.2K" },
         { id: 3, title: "Sensex Hits All-Time High at 75,000 Points", time: "1 hour ago", category: "business", views: "67K", comments: "890" },
         { id: 4, title: "India Wins Cricket World Cup Final Against Australia", time: "2 hours ago", category: "sports", views: "234K", comments: "5.6K" },
