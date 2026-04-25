@@ -16,22 +16,22 @@ const newsData = {
         { id: 5, title: "AI Breakthrough: New Model Can Detect Cancer with 99% Accuracy", time: "3 hours ago", category: "tech", views: "156K", comments: "3.4K" }
     ],
     hi: [
-        { id: 1, title: "भारत ने रचा इतिहास! चंद्रयान-3 की सफल लैंडिंग", time: "2 मिनट पहले", category: "tech", views: "125K", comments: "2.3K" },
-        { id: 2, title: "पीएम मोदी का G20 में बड़ा ऐलान", time: "15 मिनट पहले", category: "politics", views: "89K", comments: "1.2K" }
+        { id: 1, title: "???? ?? ??? ??????! ????????-3 ?? ??? ???????", time: "2 ???? ????", category: "tech", views: "125K", comments: "2.3K" },
+        { id: 2, title: "???? ???? ?? G20 ??? ???? ????", time: "15 ???? ????", category: "politics", views: "89K", comments: "1.2K" }
     ]
 };
 
 const breakingNewsData = {
     en: ["BREAKING: Chandrayaan-3 Lands on Moon!", "BREAKING: Sensex at All-Time High!", "BREAKING: India Wins World Cup!"],
-    hi: ["ब्रेकिंग: चंद्रयान-3 की सफल लैंडिंग!", "ब्रेकिंग: सेंसेक्स ने बनाया रिकॉर्ड!", "ब्रेकिंग: भारत ने जीता विश्व कप!"]
+    hi: ["????????: ????????-3 ?? ??? ???????!", "????????: ???????? ?? ????? ???????!", "????????: ???? ?? ???? ????? ??!"]
 };
 
 const booksData = {
     trending: [
-        { id: 1, title: "Atomic Habits", author: "James Clear", category: "Self-Help", rating: 4.9, reviews: "15.2K", year: 2018, description: "Transform your life with tiny changes", cover: "📖", pages: 320, freeRead: true, tags: ["Habits", "Productivity"] },
-        { id: 2, title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", category: "Finance", rating: 4.8, reviews: "42.5K", year: 1997, description: "What rich teach their kids about money", cover: "💰", pages: 336, freeRead: true, tags: ["Finance", "Wealth"] },
-        { id: 3, title: "The Psychology of Money", author: "Morgan Housel", category: "Finance", rating: 4.7, reviews: "28.3K", year: 2020, description: "Timeless lessons on wealth", cover: "🧠", pages: 256, freeRead: true, tags: ["Money", "Psychology"] },
-        { id: 4, title: "Deep Work", author: "Cal Newport", category: "Productivity", rating: 4.6, reviews: "18.7K", year: 2016, description: "Rules for focused success", cover: "⚡", pages: 304, freeRead: false, tags: ["Productivity", "Focus"] }
+        { id: 1, title: "Atomic Habits", author: "James Clear", category: "Self-Help", rating: 4.9, reviews: "15.2K", year: 2018, description: "Transform your life with tiny changes", cover: "?", pages: 320, freeRead: true, tags: ["Habits", "Productivity"] },
+        { id: 2, title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", category: "Finance", rating: 4.8, reviews: "42.5K", year: 1997, description: "What rich teach their kids about money", cover: "?", pages: 336, freeRead: true, tags: ["Finance", "Wealth"] },
+        { id: 3, title: "The Psychology of Money", author: "Morgan Housel", category: "Finance", rating: 4.7, reviews: "28.3K", year: 2020, description: "Timeless lessons on wealth", cover: "?", pages: 256, freeRead: true, tags: ["Money", "Psychology"] },
+        { id: 4, title: "Deep Work", author: "Cal Newport", category: "Productivity", rating: 4.6, reviews: "18.7K", year: 2016, description: "Rules for focused success", cover: "?", pages: 304, freeRead: false, tags: ["Productivity", "Focus"] }
     ],
     categories: ["All", "Self-Help", "Finance", "Productivity"]
 };
@@ -123,7 +123,7 @@ function renderNews() {
     if (!newsList) return;
     let data = (newsData[currentLang] || newsData.en).slice(0, currentPage * 5);
     if (currentFilter !== 'all') data = data.filter(n => n.category === currentFilter);
-    newsList.innerHTML = data.map(news => `<div class="news-card" data-id="${news.id}"><div class="news-title">📰 ${news.title}</div><div class="news-meta"><span>🕐 ${news.time}</span><span>🏷️ ${news.category}</span><span>👁️ ${news.views}</span></div></div>`).join('');
+    newsList.innerHTML = data.map(news => `<div class="news-card" data-id="${news.id}"><div class="news-title">? ${news.title}</div><div class="news-meta"><span>? ${news.time}</span><span>?? ${news.category}</span><span>?? ${news.views}</span></div></div>`).join('');
     document.querySelectorAll('.news-card').forEach((card, i) => { addShareButtons(card, data[i]); addBookmarkButton(card, data[i]); });
 }
 
@@ -131,19 +131,19 @@ function renderTrending() {
     const el = document.getElementById('trendingList');
     if (!el) return;
     const data = (newsData[currentLang] || newsData.en).slice(0, 5);
-    el.innerHTML = data.map((item, i) => `<div class="trending-item">🔥 ${i+1}. ${item.title.substring(0, 60)}<br><small>${item.views} views</small></div>`).join('');
+    el.innerHTML = data.map((item, i) => `<div class="trending-item">? ${i+1}. ${item.title.substring(0, 60)}<br><small>${item.views} views</small></div>`).join('');
 }
 
 function generateAIPicks() {
     const el = document.getElementById('aiPicks');
     if (!el) return;
-    el.innerHTML = [ { title: "AI Revolution: How to Earn $10K/Month", views: "15.2K" }, { title: "Top 10 Freelancing Skills", views: "12.8K" } ].map(pick => `<div class="ai-pick-item"><div>🤖 ${pick.title}</div><div class="news-meta">👁️ ${pick.views} reads</div><div class="ai-progress-bar"><div class="ai-progress-fill" style="width: 75%"></div></div></div>`).join('');
+    el.innerHTML = [ { title: "AI Revolution: How to Earn $10K/Month", views: "15.2K" }, { title: "Top 10 Freelancing Skills", views: "12.8K" } ].map(pick => `<div class="ai-pick-item"><div>? ${pick.title}</div><div class="news-meta">?? ${pick.views} reads</div><div class="ai-progress-bar"><div class="ai-progress-fill" style="width: 75%"></div></div></div>`).join('');
 }
 
 function renderBooks() {
     const newsFeed = document.getElementById('newsFeed');
     if (!newsFeed) return;
-    newsFeed.innerHTML = `<div class="books-header"><div class="books-header-content"><i class="fas fa-book-open"></i><h1>📚 Books Library</h1><p>Discover, read, and learn from the world's best books</p></div></div><div class="books-categories" id="booksCategories"></div><div class="books-section"><div class="section-header"><h2><i class="fas fa-fire"></i> Trending Books</h2></div><div class="books-grid" id="trendingBooksGrid"></div></div><div class="reading-goal-card"><div class="goal-content"><div class="goal-icon"><i class="fas fa-bullseye"></i></div><div class="goal-info"><h3>Your Reading Goal 2024</h3><p>You've read <span id="booksReadCount">0</span> out of 12 books</p><div class="goal-progress"><div class="goal-progress-bar" id="goalProgressBar" style="width: 0%"></div></div></div><button class="btn-set-goal" id="setGoalBtn">Set Goal</button></div></div>`;
+    newsFeed.innerHTML = `<div class="books-header"><div class="books-header-content"><i class="fas fa-book-open"></i><h1>? Books Library</h1><p>Discover, read, and learn from the world's best books</p></div></div><div class="books-categories" id="booksCategories"></div><div class="books-section"><div class="section-header"><h2><i class="fas fa-fire"></i> Trending Books</h2></div><div class="books-grid" id="trendingBooksGrid"></div></div><div class="reading-goal-card"><div class="goal-content"><div class="goal-icon"><i class="fas fa-bullseye"></i></div><div class="goal-info"><h3>Your Reading Goal 2024</h3><p>You've read <span id="booksReadCount">0</span> out of 12 books</p><div class="goal-progress"><div class="goal-progress-bar" id="goalProgressBar" style="width: 0%"></div></div></div><button class="btn-set-goal" id="setGoalBtn">Set Goal</button></div></div>`;
     const categoriesContainer = document.getElementById('booksCategories');
     if (categoriesContainer) {
         categoriesContainer.innerHTML = `<div class="categories-scroll">${booksData.categories.map(cat => `<button class="category-btn ${cat === 'All' ? 'active' : ''}" data-category="${cat}">${cat}</button>`).join('')}</div>`;
@@ -155,14 +155,14 @@ function renderBooks() {
                 const grid = document.getElementById('trendingBooksGrid');
                 let filtered = booksData.trending;
                 if (category !== 'All') filtered = booksData.trending.filter(b => b.category === category);
-                if (grid) grid.innerHTML = filtered.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'⭐'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
+                if (grid) grid.innerHTML = filtered.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'?'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
                 attachBookEvents();
             };
         });
     }
     const grid = document.getElementById('trendingBooksGrid');
     if (grid) {
-        grid.innerHTML = booksData.trending.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'⭐'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
+        grid.innerHTML = booksData.trending.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'?'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
         attachBookEvents();
     }
     const readCount = readingHistory.length;
@@ -223,7 +223,7 @@ function initSmartSearch() {
             let count = 0;
             cards.forEach(card => { if (card.querySelector('.news-title')?.textContent.toLowerCase().includes(term)) { card.style.display = 'block'; count++; } else card.style.display = 'none'; });
             const msg = document.getElementById('searchResultMsg');
-            if (msg && term) msg.innerHTML = `🔍 Found ${count} results`;
+            if (msg && term) msg.innerHTML = `? Found ${count} results`;
         }, 300);
     };
 }
