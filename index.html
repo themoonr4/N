@@ -126,10 +126,14 @@
         </nav>
         
         <div class="sidebar-footer">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-telegram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://facebook.com/themoonnews" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/themoonnews" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://telegram.me/themoonnews" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://youtube.com/@themoonnews" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/themoonnews" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/company/themoonnews" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/themoonr4" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://whatsapp.com/channel/themoonnews" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </aside>
 
@@ -175,21 +179,84 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-main">
-            <div class="footer-about"><h3>THE MOON</h3><p>Your trusted source for world-class news, AI-powered insights, and real-time updates.</p></div>
+            <div class="footer-about">
+                <h3>🌙 THE MOON</h3>
+                <p>Your trusted source for world-class news, AI-powered insights, and real-time updates since 2024.</p>
+                <div class="footer-social-icons">
+                    <a href="https://facebook.com/themoonnews" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/themoonnews" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/themoonnews" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@themoonnews" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://telegram.me/themoonnews" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="https://linkedin.com/company/themoonnews" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://whatsapp.com/channel/themoonnews" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://github.com/themoonr4" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
             <div class="footer-links">
-                <div class="link-group"><h4>Company</h4><a href="#">About Us</a><a href="#">Careers</a><a href="#">Press</a></div>
-                <div class="link-group"><h4>Resources</h4><a href="#">Blog</a><a href="#">Developers</a><a href="#">API</a></div>
-                <div class="link-group"><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div>
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#" onclick="showPage('about')">About Us</a>
+                    <a href="#" onclick="showPage('careers')">Careers</a>
+                    <a href="#" onclick="showPage('press')">Press</a>
+                    <a href="#" onclick="showPage('advertise')">Advertise</a>
+                </div>
+                <div class="link-group">
+                    <h4>Resources</h4>
+                    <a href="#" onclick="showPage('blog')">Blog</a>
+                    <a href="#" onclick="showPage('developers')">Developers</a>
+                    <a href="#" onclick="showPage('api')">API</a>
+                    <a href="#" onclick="showPage('rss')">RSS Feeds</a>
+                </div>
+                <div class="link-group">
+                    <h4>Support</h4>
+                    <a href="#" onclick="showPage('help')">Help Center</a>
+                    <a href="#" onclick="showPage('contact')">Contact Us</a>
+                    <a href="#" onclick="showPage('feedback')">Feedback</a>
+                    <a href="#" onclick="showPage('report')">Report Issue</a>
+                </div>
+                <div class="link-group">
+                    <h4>Legal</h4>
+                    <a href="#" onclick="showPage('privacy')">Privacy Policy</a>
+                    <a href="#" onclick="showPage('terms')">Terms of Service</a>
+                    <a href="#" onclick="showPage('cookies')">Cookie Policy</a>
+                    <a href="#" onclick="showPage('disclaimer')">Disclaimer</a>
+                </div>
             </div>
         </div>
-        <div class="footer-social">
-            <a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-telegram"></i></a><a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>© 2026 THE MOON. All rights reserved. | <a href="#" onclick="showPage('privacy')">Privacy</a> | <a href="#" onclick="showPage('terms')">Terms</a></p>
+                <p>Made with ❤️ for world-class journalism</p>
+            </div>
         </div>
-        <div class="copyright"><p>© 2024 THE MOON. All rights reserved. Built with ❤️ for world-class journalism.</p></div>
     </footer>
+</div>
+
+<!-- Legal Pages Modal -->
+<div class="modal" id="legalModal">
+    <div class="modal-content legal-content">
+        <div class="modal-header">
+            <h2 id="legalTitle">Privacy Policy</h2>
+            <span class="close-modal" onclick="closeLegalModal()">&times;</span>
+        </div>
+        <div class="modal-body legal-body" id="legalBody">
+            <!-- Content loads dynamically -->
+        </div>
+    </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="modal" id="settingsModal">
+    <div class="modal-content settings-content">
+        <div class="modal-header">
+            <h2><i class="fas fa-cog"></i> Settings</h2>
+            <span class="close-modal" onclick="closeSettingsModal()">&times;</span>
+        </div>
+        <div class="modal-body settings-body" id="settingsBody">
+            <!-- Settings content -->
+        </div>
+    </div>
 </div>
 
 <!-- PWA Install -->
@@ -240,4 +307,4 @@
 <script src="js/api.js"></script>
 <script src="js/main.js"></script>
 </body>
-</html>
+                        </html>
