@@ -8,46 +8,33 @@ let currentFilter = 'all';
 let currentBreakingIndex = 0;
 
 const newsData = {
-  en: [
-        { id: 1777186580293, title: "Test news 1 - Website working now", time: "Just now
-
-/news Test news 2 - Dark mode working", category: "tech", views: "0", comments: "0" },
-    { id: 1777176279223, title: "india win", time: "now", category: "sports", views: "0", comments: "0" },
-    { id: 1777163720146, title: "Today's Top Headlines ? April 26, 2026", time: "Just now Good morning! Here's a roundup of the biggest stories making waves around the world right now, written the way you'd read them over your morning chai or coffee.
-Tensions in the Middle East: Trump Abruptly Cancels Iran Peace Talks
-In a surprise move that has diplomats scrambling, President Donald Trump called off plans to send top envoys?including Steve Witkoff and Jared Kushner?to Pakistan for indirect peace talks with Iran. Speaking to reporters and on social media, Trump described the effort as "too much work" and said Iran could simply "call us anytime they want" if they were serious about a deal.133f41
-The cancellation comes amid ongoing friction in the Strait of Hormuz, a critical chokepoint for global oil shipments. The US Navy is actively hunting for and clearing Iranian-laid mines in the waterway, with Trump stating that American mine-sweepers are already on the job to keep trade flowing.888e08
-Oil prices have been volatile as a result, raising fears of higher fuel costs worldwide?including potential ripple effects for India if the situation drags on. Analysts say any prolonged disruption could push global energy markets into fresh turmoil.
-Trump's Approval Ratings Slide Amid Economic Worries
-Back home in the US, fresh polls show President Trump's job approval dipping, with disapproval ratings hitting new highs around 58% according to some averages. Much of the frustration stems from economic concerns, even as the administration juggles the Iran situation.b434b8
-The White House Correspondents' Association Dinner is also underway this weekend in Washington, drawing the usual mix of politicians, journalists, and celebrities?though the spotlight remains firmly on foreign policy headaches.
-India Watch: Political Shifts and Everyday Headlines
-Closer to home, there's been a notable political development with seven Aam Aadmi Party (AAP) Rajya Sabha MPs, including Raghav Chadha, quitting the party to merge with the BJP. The move highlights shifting alliances ahead of key political battles.", category: "politics", views: "0", comments: "0" },
-    { id: 1777150260960, title: "win th toss", time: "now", category: "sports", views: "0", comments: "0" },
-    { id: 1777142201686, title: "Test news from bot", time: "Just now", category: "tech", views: "0", comments: "0" },
-    { id: 1, title: "India Creates History! Chandrayaan-3 Successfully Lands on Moon", time: "2 mins ago", category: "tech", views: "125K", comments: "2.3K" },
+    en: [
+        { id: 1, title: "India Creates History! Chandrayaan-3 Successfully Lands on Moon", time: "2 mins ago", category: "tech", views: "125K", comments: "2.3K" },
         { id: 2, title: "PM Modi Announces $10 Billion AI Mission at G20 Summit", time: "15 mins ago", category: "politics", views: "89K", comments: "1.2K" },
         { id: 3, title: "Sensex Hits All-Time High at 75,000 Points", time: "1 hour ago", category: "business", views: "67K", comments: "890" },
         { id: 4, title: "India Wins Cricket World Cup Final Against Australia", time: "2 hours ago", category: "sports", views: "234K", comments: "5.6K" },
-        { id: 5, title: "AI Breakthrough: New Model Can Detect Cancer with 99% Accuracy", time: "3 hours ago", category: "tech", views: "156K", comments: "3.4K" }
+        { id: 5, title: "AI Breakthrough: New Model Can Detect Cancer with 99% Accuracy", time: "3 hours ago", category: "tech", views: "156K", comments: "3.4K" },
+        { id: 6, title: "Test news 1 - Website working now", time: "Just now", category: "tech", views: "0", comments: "0" },
+        { id: 7, title: "Test news 2 - Dark mode working", time: "Just now", category: "tech", views: "0", comments: "0" },
+        { id: 8, title: "Welcome to THE MOON", time: "Just now", category: "sports", views: "0", comments: "0" }
     ],
     hi: [
-        { id: 1, title: "???? ?? ??? ??????! ????????-3 ?? ??? ???????", time: "2 ???? ????", category: "tech", views: "125K", comments: "2.3K" },
-        { id: 2, title: "???? ???? ?? G20 ??? ???? ????", time: "15 ???? ????", category: "politics", views: "89K", comments: "1.2K" }
+        { id: 1, title: "भारत ने रचा इतिहास! चंद्रयान-3 की सफल लैंडिंग", time: "2 मिनट पहले", category: "tech", views: "125K", comments: "2.3K" },
+        { id: 2, title: "पीएम मोदी का G20 में बड़ा ऐलान", time: "15 मिनट पहले", category: "politics", views: "89K", comments: "1.2K" }
     ]
 };
 
 const breakingNewsData = {
     en: ["BREAKING: Chandrayaan-3 Lands on Moon!", "BREAKING: Sensex at All-Time High!", "BREAKING: India Wins World Cup!"],
-    hi: ["????????: ????????-3 ?? ??? ???????!", "????????: ???????? ?? ????? ???????!", "????????: ???? ?? ???? ????? ??!"]
+    hi: ["ब्रेकिंग: चंद्रयान-3 की सफल लैंडिंग!", "ब्रेकिंग: सेंसेक्स ने बनाया रिकॉर्ड!", "ब्रेकिंग: भारत ने जीता विश्व कप!"]
 };
 
 const booksData = {
     trending: [
-        { id: 1, title: "Atomic Habits", author: "James Clear", category: "Self-Help", rating: 4.9, reviews: "15.2K", year: 2018, description: "Transform your life with tiny changes", cover: "?", pages: 320, freeRead: true, tags: ["Habits", "Productivity"] },
-        { id: 2, title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", category: "Finance", rating: 4.8, reviews: "42.5K", year: 1997, description: "What rich teach their kids about money", cover: "?", pages: 336, freeRead: true, tags: ["Finance", "Wealth"] },
-        { id: 3, title: "The Psychology of Money", author: "Morgan Housel", category: "Finance", rating: 4.7, reviews: "28.3K", year: 2020, description: "Timeless lessons on wealth", cover: "?", pages: 256, freeRead: true, tags: ["Money", "Psychology"] },
-        { id: 4, title: "Deep Work", author: "Cal Newport", category: "Productivity", rating: 4.6, reviews: "18.7K", year: 2016, description: "Rules for focused success", cover: "?", pages: 304, freeRead: false, tags: ["Productivity", "Focus"] }
+        { id: 1, title: "Atomic Habits", author: "James Clear", category: "Self-Help", rating: 4.9, reviews: "15.2K", year: 2018, description: "Transform your life with tiny changes", cover: "📖", pages: 320, freeRead: true, tags: ["Habits", "Productivity"] },
+        { id: 2, title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", category: "Finance", rating: 4.8, reviews: "42.5K", year: 1997, description: "What rich teach their kids about money", cover: "💰", pages: 336, freeRead: true, tags: ["Finance", "Wealth"] },
+        { id: 3, title: "The Psychology of Money", author: "Morgan Housel", category: "Finance", rating: 4.7, reviews: "28.3K", year: 2020, description: "Timeless lessons on wealth", cover: "🧠", pages: 256, freeRead: true, tags: ["Money", "Psychology"] },
+        { id: 4, title: "Deep Work", author: "Cal Newport", category: "Productivity", rating: 4.6, reviews: "18.7K", year: 2016, description: "Rules for focused success", cover: "⚡", pages: 304, freeRead: false, tags: ["Productivity", "Focus"] }
     ],
     categories: ["All", "Self-Help", "Finance", "Productivity"]
 };
@@ -139,7 +126,7 @@ function renderNews() {
     if (!newsList) return;
     let data = (newsData[currentLang] || newsData.en).slice(0, currentPage * 5);
     if (currentFilter !== 'all') data = data.filter(n => n.category === currentFilter);
-    newsList.innerHTML = data.map(news => `<div class="news-card" data-id="${news.id}"><div class="news-title">? ${news.title}</div><div class="news-meta"><span>? ${news.time}</span><span>?? ${news.category}</span><span>?? ${news.views}</span></div></div>`).join('');
+    newsList.innerHTML = data.map(news => `<div class="news-card" data-id="${news.id}"><div class="news-title">📰 ${news.title}</div><div class="news-meta"><span>🕐 ${news.time}</span><span>🏷️ ${news.category}</span><span>👁️ ${news.views}</span></div></div>`).join('');
     document.querySelectorAll('.news-card').forEach((card, i) => { addShareButtons(card, data[i]); addBookmarkButton(card, data[i]); });
 }
 
@@ -147,19 +134,19 @@ function renderTrending() {
     const el = document.getElementById('trendingList');
     if (!el) return;
     const data = (newsData[currentLang] || newsData.en).slice(0, 5);
-    el.innerHTML = data.map((item, i) => `<div class="trending-item">? ${i+1}. ${item.title.substring(0, 60)}<br><small>${item.views} views</small></div>`).join('');
+    el.innerHTML = data.map((item, i) => `<div class="trending-item">🔥 ${i+1}. ${item.title.substring(0, 60)}<br><small>${item.views} views</small></div>`).join('');
 }
 
 function generateAIPicks() {
     const el = document.getElementById('aiPicks');
     if (!el) return;
-    el.innerHTML = [ { title: "AI Revolution: How to Earn $10K/Month", views: "15.2K" }, { title: "Top 10 Freelancing Skills", views: "12.8K" } ].map(pick => `<div class="ai-pick-item"><div>? ${pick.title}</div><div class="news-meta">?? ${pick.views} reads</div><div class="ai-progress-bar"><div class="ai-progress-fill" style="width: 75%"></div></div></div>`).join('');
+    el.innerHTML = [ { title: "AI Revolution: How to Earn $10K/Month", views: "15.2K" }, { title: "Top 10 Freelancing Skills", views: "12.8K" } ].map(pick => `<div class="ai-pick-item"><div>🤖 ${pick.title}</div><div class="news-meta">👁️ ${pick.views} reads</div><div class="ai-progress-bar"><div class="ai-progress-fill" style="width: 75%"></div></div></div>`).join('');
 }
 
 function renderBooks() {
     const newsFeed = document.getElementById('newsFeed');
     if (!newsFeed) return;
-    newsFeed.innerHTML = `<div class="books-header"><div class="books-header-content"><i class="fas fa-book-open"></i><h1>? Books Library</h1><p>Discover, read, and learn from the world's best books</p></div></div><div class="books-categories" id="booksCategories"></div><div class="books-section"><div class="section-header"><h2><i class="fas fa-fire"></i> Trending Books</h2></div><div class="books-grid" id="trendingBooksGrid"></div></div><div class="reading-goal-card"><div class="goal-content"><div class="goal-icon"><i class="fas fa-bullseye"></i></div><div class="goal-info"><h3>Your Reading Goal 2024</h3><p>You've read <span id="booksReadCount">0</span> out of 12 books</p><div class="goal-progress"><div class="goal-progress-bar" id="goalProgressBar" style="width: 0%"></div></div></div><button class="btn-set-goal" id="setGoalBtn">Set Goal</button></div></div>`;
+    newsFeed.innerHTML = `<div class="books-header"><div class="books-header-content"><i class="fas fa-book-open"></i><h1>📚 Books Library</h1><p>Discover, read, and learn from the world's best books</p></div></div><div class="books-categories" id="booksCategories"></div><div class="books-section"><div class="section-header"><h2><i class="fas fa-fire"></i> Trending Books</h2></div><div class="books-grid" id="trendingBooksGrid"></div></div><div class="reading-goal-card"><div class="goal-content"><div class="goal-icon"><i class="fas fa-bullseye"></i></div><div class="goal-info"><h3>Your Reading Goal 2024</h3><p>You've read <span id="booksReadCount">0</span> out of 12 books</p><div class="goal-progress"><div class="goal-progress-bar" id="goalProgressBar" style="width: 0%"></div></div></div><button class="btn-set-goal" id="setGoalBtn">Set Goal</button></div></div>`;
     const categoriesContainer = document.getElementById('booksCategories');
     if (categoriesContainer) {
         categoriesContainer.innerHTML = `<div class="categories-scroll">${booksData.categories.map(cat => `<button class="category-btn ${cat === 'All' ? 'active' : ''}" data-category="${cat}">${cat}</button>`).join('')}</div>`;
@@ -171,14 +158,14 @@ function renderBooks() {
                 const grid = document.getElementById('trendingBooksGrid');
                 let filtered = booksData.trending;
                 if (category !== 'All') filtered = booksData.trending.filter(b => b.category === category);
-                if (grid) grid.innerHTML = filtered.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'?'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
+                if (grid) grid.innerHTML = filtered.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'⭐'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
                 attachBookEvents();
             };
         });
     }
     const grid = document.getElementById('trendingBooksGrid');
     if (grid) {
-        grid.innerHTML = booksData.trending.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'?'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
+        grid.innerHTML = booksData.trending.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'⭐'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
         attachBookEvents();
     }
     const readCount = readingHistory.length;
@@ -239,7 +226,7 @@ function initSmartSearch() {
             let count = 0;
             cards.forEach(card => { if (card.querySelector('.news-title')?.textContent.toLowerCase().includes(term)) { card.style.display = 'block'; count++; } else card.style.display = 'none'; });
             const msg = document.getElementById('searchResultMsg');
-            if (msg && term) msg.innerHTML = `? Found ${count} results`;
+            if (msg && term) msg.innerHTML = `🔍 Found ${count} results`;
         }, 300);
     };
 }
