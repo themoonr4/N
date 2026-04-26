@@ -9,7 +9,8 @@ let currentBreakingIndex = 0;
 
 const newsData = {
   en: [
-        { id: 1777192870926, title: "chandrayan", time: "just now", category: "tech", views: "0", comments: "0" },
+        { id: 1777197933157, title: "CSK vs GT IPL 2026", time: "just now", category: "sports", views: "0", comments: "0" },
+    { id: 1777192870926, title: "chandrayan", time: "just now", category: "tech", views: "0", comments: "0" },
     { id: 1, title: "India Creates History! Chandrayaan-3 Successfully Lands on Moon", time: "2 mins ago", category: "tech", views: "125K", comments: "2.3K" },
         { id: 2, title: "PM Modi Announces $10 Billion AI Mission at G20 Summit", time: "15 mins ago", category: "politics", views: "89K", comments: "1.2K" },
         { id: 3, title: "Sensex Hits All-Time High at 75,000 Points", time: "1 hour ago", category: "business", views: "67K", comments: "890" },
