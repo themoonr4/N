@@ -9,7 +9,8 @@ let currentBreakingIndex = 0;
 
 const newsData = {
   en: [
-        { id: 1777163720146, title: "Today's Top Headlines ? April 26, 2026", time: "Just now Good morning! Here's a roundup of the biggest stories making waves around the world right now, written the way you'd read them over your morning chai or coffee.
+        { id: 1777176279223, title: "india win", time: "now", category: "sports", views: "0", comments: "0" },
+    { id: 1777163720146, title: "Today's Top Headlines ? April 26, 2026", time: "Just now Good morning! Here's a roundup of the biggest stories making waves around the world right now, written the way you'd read them over your morning chai or coffee.
 Tensions in the Middle East: Trump Abruptly Cancels Iran Peace Talks
 In a surprise move that has diplomats scrambling, President Donald Trump called off plans to send top envoys?including Steve Witkoff and Jared Kushner?to Pakistan for indirect peace talks with Iran. Speaking to reporters and on social media, Trump described the effort as "too much work" and said Iran could simply "call us anytime they want" if they were serious about a deal.133f41
 The cancellation comes amid ongoing friction in the Strait of Hormuz, a critical chokepoint for global oil shipments. The US Navy is actively hunting for and clearing Iranian-laid mines in the waterway, with Trump stating that American mine-sweepers are already on the job to keep trade flowing.888e08
