@@ -9,7 +9,17 @@ let currentBreakingIndex = 0;
 
 const newsData = {
   en: [
-        { id: 1777150260960, title: "win th toss", time: "now", category: "sports", views: "0", comments: "0" },
+        { id: 1777163720146, title: "Today's Top Headlines ? April 26, 2026", time: "Just now Good morning! Here's a roundup of the biggest stories making waves around the world right now, written the way you'd read them over your morning chai or coffee.
+Tensions in the Middle East: Trump Abruptly Cancels Iran Peace Talks
+In a surprise move that has diplomats scrambling, President Donald Trump called off plans to send top envoys?including Steve Witkoff and Jared Kushner?to Pakistan for indirect peace talks with Iran. Speaking to reporters and on social media, Trump described the effort as "too much work" and said Iran could simply "call us anytime they want" if they were serious about a deal.133f41
+The cancellation comes amid ongoing friction in the Strait of Hormuz, a critical chokepoint for global oil shipments. The US Navy is actively hunting for and clearing Iranian-laid mines in the waterway, with Trump stating that American mine-sweepers are already on the job to keep trade flowing.888e08
+Oil prices have been volatile as a result, raising fears of higher fuel costs worldwide?including potential ripple effects for India if the situation drags on. Analysts say any prolonged disruption could push global energy markets into fresh turmoil.
+Trump's Approval Ratings Slide Amid Economic Worries
+Back home in the US, fresh polls show President Trump's job approval dipping, with disapproval ratings hitting new highs around 58% according to some averages. Much of the frustration stems from economic concerns, even as the administration juggles the Iran situation.b434b8
+The White House Correspondents' Association Dinner is also underway this weekend in Washington, drawing the usual mix of politicians, journalists, and celebrities?though the spotlight remains firmly on foreign policy headaches.
+India Watch: Political Shifts and Everyday Headlines
+Closer to home, there's been a notable political development with seven Aam Aadmi Party (AAP) Rajya Sabha MPs, including Raghav Chadha, quitting the party to merge with the BJP. The move highlights shifting alliances ahead of key political battles.", category: "politics", views: "0", comments: "0" },
+    { id: 1777150260960, title: "win th toss", time: "now", category: "sports", views: "0", comments: "0" },
     { id: 1777142201686, title: "Test news from bot", time: "Just now", category: "tech", views: "0", comments: "0" },
     { id: 1, title: "India Creates History! Chandrayaan-3 Successfully Lands on Moon", time: "2 mins ago", category: "tech", views: "125K", comments: "2.3K" },
         { id: 2, title: "PM Modi Announces $10 Billion AI Mission at G20 Summit", time: "15 mins ago", category: "politics", views: "89K", comments: "1.2K" },
