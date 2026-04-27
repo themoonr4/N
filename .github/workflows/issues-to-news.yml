@@ -1,0 +1,52 @@
+name: GitHub Issues to News
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, closed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  convert-issues-to-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch issues with 'news' label
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Fetch issues from GitHub
+          gh api -H "Accept: application/vnd.github.v3+json" \
+            "/repos/${{ github.repository }}/issues?state=open&labels=news" \
+            > issues.json
+          
+          # Create news-data.js file
+          echo "// Auto-generated from GitHub Issues" > js/news-data.js
+          echo "const newsData = { en: [" >> js/news-data.js
+          
+          # Parse JSON and convert to news format
+          jq -r '.[] | "        { id: \(.number), title: \"\(.title)\", time: \"Just now\", category: \"\(.labels[].name | select(. != \"news\")\", views: \"0\", comments: \"0\" },"' issues.json >> js/news-data.js
+          
+          echo "    ] };" >> js/news-data.js
+          
+          echo "✅ news-data.js generated with $(jq length issues.json) news items"
+
+      - name: Update main.js to use news-data.js
+        run: |
+          # Remove hardcoded newsData from main.js and import from news-data.js
+          sed -i '/const newsData = {/,/};/c\\/\/ newsData is now loaded from news-data.js' js/main.js
+          
+          # Add import line at top of main.js
+          echo "// Import news data from auto-generated file" > js/main-new.js
+          echo "// const newsData = window.newsData || { en: [] };" >> js/main-new.js
+          cat js/main.js >> js/main-new.js
+          mv js/main-new.js js/main.js
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
