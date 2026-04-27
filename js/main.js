@@ -8,49 +8,35 @@ let currentFilter = 'all';
 let currentBreakingIndex = 0;
 
 const newsData = {
-  en: [
-        { id: 1777198840485, title: "Test IPL News", time: "Just now", category: "sports", views: "0", comments: "0" },
-    { id: 1777198405363, title: "IPL 2026 Match 37: CSK vs GT - Live Updates, Playing XI, Dhoni Fitness Update", time: "Just now
-
-Chennai Super Kings vs Gujaratq Titans ?? ??? ?? ????? ???????? ??? ???? ?? ??? ??? ?????? ?????? ?? ??? ????? ???? ???????? ?? ????? ???? ???
-
-? CSK ?? ??????? XI: Ruturaj Gaikwad (c), Sanju Samson (wk), Sarfaraz Khan, Dewald Brevis, Shivam Dube, Karthik Sharma, Jamie Overton, Anshul Kamboj, Noor Ahmad, Gurjapneet Singh, Mukesh Chaudhary.
-
-? GT ?? ??????? XI: Shubman Gill (c), Sai Sudharsan, Jos Buttler (wk), Washington Sundar, Jason Holder, Shahrukh Khan, Rahul Tewatia, Rashid Khan, Manav Suthar, Kagiso Rabada, Mohammed Siraj.
-
-? MS Dhoni ?? ??????: Dhoni calf injury ?? recover ?? ??? ???? ?????? ?? ?? ??? ??? ???? ??? ??? ???? ???? ???? ????? ?? ?????? ?? ??? ????
-
-? ??? ?? ??????: ????? ?? ????? ??? ?? Rashid Khan vs Noor Ahmad ?? ??? ????? ???? ????? ???-??-??? ??????? ???? ????? ???
-
-#IPL2026 #CSKvsGT #Dhoni #IPL", category: "sports", views: "0", comments: "0" },
-    { id: 1777197933157, title: "CSK vs GT IPL 2026", time: "just now", category: "sports", views: "0", comments: "0" },
-    { id: 1777192870926, title: "chandrayan", time: "just now", category: "tech", views: "0", comments: "0" },
-    { id: 1, title: "India Creates History! Chandrayaan-3 Successfully Lands on Moon", time: "2 mins ago", category: "tech", views: "125K", comments: "2.3K" },
-        { id: 2, title: "PM Modi Announces $10 Billion AI Mission at G20 Summit", time: "15 mins ago", category: "politics", views: "89K", comments: "1.2K" },
-        { id: 3, title: "Sensex Hits All-Time High at 75,000 Points", time: "1 hour ago", category: "business", views: "67K", comments: "890" },
-        { id: 4, title: "India Wins Cricket World Cup Final Against Australia", time: "2 hours ago", category: "sports", views: "234K", comments: "5.6K" },
-        { id: 5, title: "AI Breakthrough: New Model Can Detect Cancer with 99% Accuracy", time: "3 hours ago", category: "tech", views: "156K", comments: "3.4K" },
-        { id: 6, title: "Test news 1 - Website working now", time: "Just now", category: "tech", views: "0", comments: "0" },
-        { id: 7, title: "Test news 2 - Dark mode working", time: "Just now", category: "tech", views: "0", comments: "0" },
-        { id: 8, title: "Welcome to THE MOON", time: "Just now", category: "sports", views: "0", comments: "0" }
+    en: [
+        { id: 1, title: "🏏 IPL 2026: CSK vs GT - Gujarat Titans won toss chose to bowl first. MS Dhoni not playing due to calf injury. Full match updates inside.", time: "Just now", category: "sports", views: "1.2K", comments: "45" },
+        { id: 2, title: "🇮🇳 ISRO Announces Chandrayaan-4 Mission to Moon by 2028 - India's first lunar sample return mission. Budget: ₹2,500 crore.", time: "5 mins ago", category: "tech", views: "5.6K", comments: "234" },
+        { id: 3, title: "📱 iPhone 17 Pro Max Launched in India at ₹1,59,900 - A19 chip, 48MP camera, titanium body. Pre-orders start May 1.", time: "15 mins ago", category: "tech", views: "8.9K", comments: "567" },
+        { id: 4, title: "📊 Sensex Crashes 1200 Points on Global Sell-off - US Fed rate hike fears, FII selling continue. Nifty below 22,000.", time: "1 hour ago", category: "business", views: "3.4K", comments: "89" },
+        { id: 5, title: "🏏 IPL 2026 Playoffs Race: CSK, MI, GT, RCB in contention. Last 10 matches to decide top 4. Full points table analysis.", time: "2 hours ago", category: "sports", views: "12K", comments: "890" },
+        { id: 6, title: "🎓 UPSC Civil Services Final Result 2025 Declared - 850 candidates selected. Download PDF from official website.", time: "3 hours ago", category: "study", views: "45K", comments: "2.3K" },
+        { id: 7, title: "💰 Petrol Price Increased by ₹2 per liter - New rates effective midnight. Diesel up by ₹1.50. Check city-wise prices.", time: "4 hours ago", category: "business", views: "23K", comments: "1.1K" },
+        { id: 8, title: "🤖 Google Launches Gemini AI 2.0 - 10x faster than ChatGPT. Free tier available. Indian languages supported.", time: "5 hours ago", category: "tech", views: "67K", comments: "4.5K" },
+        { id: 9, title: "🏏 IPL 2026: Today's Match - RCB vs MI. Kohli vs Rohit faceoff. Live updates at 7:30 PM.", time: "6 hours ago", category: "sports", views: "89K", comments: "6.7K" },
+        { id: 10, title: "🇮🇳 PM Modi to Inaugurate New Spaceport in Tamil Nadu - Second launch pad for satellite launches.", time: "7 hours ago", category: "politics", views: "34K", comments: "1.8K" }
     ],
     hi: [
-        { id: 1, title: "???? ?? ??? ??????! ????????-3 ?? ??? ???????", time: "2 ???? ????", category: "tech", views: "125K", comments: "2.3K" },
-        { id: 2, title: "???? ???? ?? G20 ??? ???? ????", time: "15 ???? ????", category: "politics", views: "89K", comments: "1.2K" }
+        { id: 1, title: "आईपीएल 2026: चेन्नई सुपर किंग्स vs गुजरात टाइटंस - गिल ने टॉस जीता, पहले गेंदबाजी का फैसला", time: "अभी अभी", category: "sports", views: "1.2K", comments: "45" },
+        { id: 2, title: "चंद्रयान-4: 2028 में भारत का अगला मून मिशन - 2,500 करोड़ का बजट", time: "5 मिनट पहले", category: "tech", views: "5.6K", comments: "234" }
     ]
 };
 
 const breakingNewsData = {
-    en: ["BREAKING: Chandrayaan-3 Lands on Moon!", "BREAKING: Sensex at All-Time High!", "BREAKING: India Wins World Cup!"],
-    hi: ["????????: ????????-3 ?? ??? ???????!", "????????: ???????? ?? ????? ???????!", "????????: ???? ?? ???? ????? ??!"]
+    en: ["🚨 BREAKING: Chandrayaan-4 Announced for 2028!", "🚨 BREAKING: Sensex Crashes 1200 Points!", "🚨 BREAKING: IPL 2026 Playoffs Race Heats Up!"],
+    hi: ["🚨 ब्रेकिंग: चंद्रयान-4 का ऐलान!", "🚨 ब्रेकिंग: सेंसेक्स 1200 अंक गिरा!", "🚨 ब्रेकिंग: IPL 2026 प्लेऑफ की रेस गरमाई!"]
 };
 
 const booksData = {
     trending: [
-        { id: 1, title: "Atomic Habits", author: "James Clear", category: "Self-Help", rating: 4.9, reviews: "15.2K", year: 2018, description: "Transform your life with tiny changes", cover: "?", pages: 320, freeRead: true, tags: ["Habits", "Productivity"] },
-        { id: 2, title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", category: "Finance", rating: 4.8, reviews: "42.5K", year: 1997, description: "What rich teach their kids about money", cover: "?", pages: 336, freeRead: true, tags: ["Finance", "Wealth"] },
-        { id: 3, title: "The Psychology of Money", author: "Morgan Housel", category: "Finance", rating: 4.7, reviews: "28.3K", year: 2020, description: "Timeless lessons on wealth", cover: "?", pages: 256, freeRead: true, tags: ["Money", "Psychology"] },
-        { id: 4, title: "Deep Work", author: "Cal Newport", category: "Productivity", rating: 4.6, reviews: "18.7K", year: 2016, description: "Rules for focused success", cover: "?", pages: 304, freeRead: false, tags: ["Productivity", "Focus"] }
+        { id: 1, title: "Atomic Habits", author: "James Clear", category: "Self-Help", rating: 4.9, reviews: "15.2K", year: 2018, description: "Transform your life with tiny changes", cover: "📖", pages: 320, freeRead: true, tags: ["Habits", "Productivity"] },
+        { id: 2, title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", category: "Finance", rating: 4.8, reviews: "42.5K", year: 1997, description: "What rich teach their kids about money", cover: "💰", pages: 336, freeRead: true, tags: ["Finance", "Wealth"] },
+        { id: 3, title: "The Psychology of Money", author: "Morgan Housel", category: "Finance", rating: 4.7, reviews: "28.3K", year: 2020, description: "Timeless lessons on wealth", cover: "🧠", pages: 256, freeRead: true, tags: ["Money", "Psychology"] },
+        { id: 4, title: "Deep Work", author: "Cal Newport", category: "Productivity", rating: 4.6, reviews: "18.7K", year: 2016, description: "Rules for focused success", cover: "⚡", pages: 304, freeRead: false, tags: ["Productivity", "Focus"] }
     ],
     categories: ["All", "Self-Help", "Finance", "Productivity"]
 };
@@ -139,30 +125,58 @@ function addBookmarkButton(card, news) {
 
 function renderNews() {
     const newsList = document.getElementById('newsList');
-    if (!newsList) return;
+    if (!newsList) {
+        console.log("newsList element not found!");
+        return;
+    }
     let data = (newsData[currentLang] || newsData.en).slice(0, currentPage * 5);
     if (currentFilter !== 'all') data = data.filter(n => n.category === currentFilter);
-    newsList.innerHTML = data.map(news => `<div class="news-card" data-id="${news.id}"><div class="news-title">? ${news.title}</div><div class="news-meta"><span>? ${news.time}</span><span>?? ${news.category}</span><span>?? ${news.views}</span></div></div>`).join('');
-    document.querySelectorAll('.news-card').forEach((card, i) => { addShareButtons(card, data[i]); addBookmarkButton(card, data[i]); });
+    
+    if (data.length === 0) {
+        newsList.innerHTML = '<div class="empty-state">No news found. Please add news via Telegram bot.</div>';
+        return;
+    }
+    
+    newsList.innerHTML = data.map(news => `
+        <div class="news-card" data-id="${news.id}">
+            <div class="news-title">📰 ${news.title}</div>
+            <div class="news-meta">
+                <span>🕐 ${news.time}</span>
+                <span>🏷️ ${news.category}</span>
+                <span>👁️ ${news.views}</span>
+                <span>💬 ${news.comments}</span>
+            </div>
+        </div>
+    `).join('');
+    
+    document.querySelectorAll('.news-card').forEach((card, i) => { 
+        addShareButtons(card, data[i]); 
+        addBookmarkButton(card, data[i]); 
+    });
 }
 
 function renderTrending() {
     const el = document.getElementById('trendingList');
     if (!el) return;
     const data = (newsData[currentLang] || newsData.en).slice(0, 5);
-    el.innerHTML = data.map((item, i) => `<div class="trending-item">? ${i+1}. ${item.title.substring(0, 60)}<br><small>${item.views} views</small></div>`).join('');
+    el.innerHTML = data.map((item, i) => `<div class="trending-item">🔥 ${i+1}. ${item.title.substring(0, 60)}<br><small>${item.views} views</small></div>`).join('');
 }
 
 function generateAIPicks() {
     const el = document.getElementById('aiPicks');
     if (!el) return;
-    el.innerHTML = [ { title: "AI Revolution: How to Earn $10K/Month", views: "15.2K" }, { title: "Top 10 Freelancing Skills", views: "12.8K" } ].map(pick => `<div class="ai-pick-item"><div>? ${pick.title}</div><div class="news-meta">?? ${pick.views} reads</div><div class="ai-progress-bar"><div class="ai-progress-fill" style="width: 75%"></div></div></div>`).join('');
+    el.innerHTML = [ 
+        { title: "🤖 AI Revolution: How to Earn $10K/Month", views: "15.2K" }, 
+        { title: "💰 Top 10 Freelancing Skills for 2026", views: "12.8K" },
+        { title: "📈 Dropshipping Success Story - ₹5 Lakh/month", views: "9.4K" }
+    ].map(pick => `<div class="ai-pick-item"><div>${pick.title}</div><div class="news-meta">👁️ ${pick.views} reads</div><div class="ai-progress-bar"><div class="ai-progress-fill" style="width: 75%"></div></div></div>`).join('');
 }
 
 function renderBooks() {
     const newsFeed = document.getElementById('newsFeed');
     if (!newsFeed) return;
-    newsFeed.innerHTML = `<div class="books-header"><div class="books-header-content"><i class="fas fa-book-open"></i><h1>? Books Library</h1><p>Discover, read, and learn from the world's best books</p></div></div><div class="books-categories" id="booksCategories"></div><div class="books-section"><div class="section-header"><h2><i class="fas fa-fire"></i> Trending Books</h2></div><div class="books-grid" id="trendingBooksGrid"></div></div><div class="reading-goal-card"><div class="goal-content"><div class="goal-icon"><i class="fas fa-bullseye"></i></div><div class="goal-info"><h3>Your Reading Goal 2024</h3><p>You've read <span id="booksReadCount">0</span> out of 12 books</p><div class="goal-progress"><div class="goal-progress-bar" id="goalProgressBar" style="width: 0%"></div></div></div><button class="btn-set-goal" id="setGoalBtn">Set Goal</button></div></div>`;
+    newsFeed.innerHTML = `<div class="books-header"><div class="books-header-content"><i class="fas fa-book-open"></i><h1>📚 Books Library</h1><p>Discover, read, and learn from the world's best books</p></div></div><div class="books-categories" id="booksCategories"></div><div class="books-section"><div class="section-header"><h2><i class="fas fa-fire"></i> Trending Books</h2></div><div class="books-grid" id="trendingBooksGrid"></div></div><div class="reading-goal-card"><div class="goal-content"><div class="goal-icon"><i class="fas fa-bullseye"></i></div><div class="goal-info"><h3>Your Reading Goal 2026</h3><p>You've read <span id="booksReadCount">0</span> out of 12 books</p><div class="goal-progress"><div class="goal-progress-bar" id="goalProgressBar" style="width: 0%"></div></div></div><button class="btn-set-goal" id="setGoalBtn">Set Goal</button></div></div>`;
+    
     const categoriesContainer = document.getElementById('booksCategories');
     if (categoriesContainer) {
         categoriesContainer.innerHTML = `<div class="categories-scroll">${booksData.categories.map(cat => `<button class="category-btn ${cat === 'All' ? 'active' : ''}" data-category="${cat}">${cat}</button>`).join('')}</div>`;
@@ -174,18 +188,18 @@ function renderBooks() {
                 const grid = document.getElementById('trendingBooksGrid');
                 let filtered = booksData.trending;
                 if (category !== 'All') filtered = booksData.trending.filter(b => b.category === category);
-                if (grid) grid.innerHTML = filtered.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'?'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
+                if (grid) grid.innerHTML = filtered.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'⭐'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
                 attachBookEvents();
             };
         });
     }
     const grid = document.getElementById('trendingBooksGrid');
     if (grid) {
-        grid.innerHTML = booksData.trending.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'?'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
+        grid.innerHTML = booksData.trending.map(book => `<div class="book-card"><div class="book-cover">${book.cover}</div><div class="book-info"><h3 class="book-title">${book.title}</h3><div class="book-author">by ${book.author}</div><div class="book-rating"><div class="stars">${'⭐'.repeat(Math.floor(book.rating))}</div><span>(${book.reviews})</span></div><p class="book-description">${book.description}</p><div class="book-actions"><button class="btn-read" data-book='${JSON.stringify(book)}'><i class="fas fa-book-open"></i> Read</button><button class="btn-bookmark" data-book-id="${book.id}"><i class="fas fa-bookmark"></i></button></div></div>${book.freeRead ? '<div class="free-badge">FREE</div>' : ''}</div>`).join('');
         attachBookEvents();
     }
     const readCount = readingHistory.length;
-    document.getElementById('booksReadCount')?.setAttribute('data-count', readCount);
+    document.getElementById('booksReadCount')?.textContent = readCount;
     const goal = localStorage.getItem('readingGoal') || 12;
     const percentage = (readCount / goal) * 100;
     document.getElementById('goalProgressBar')?.setAttribute('style', `width: ${Math.min(percentage, 100)}%`);
@@ -242,7 +256,8 @@ function initSmartSearch() {
             let count = 0;
             cards.forEach(card => { if (card.querySelector('.news-title')?.textContent.toLowerCase().includes(term)) { card.style.display = 'block'; count++; } else card.style.display = 'none'; });
             const msg = document.getElementById('searchResultMsg');
-            if (msg && term) msg.innerHTML = `? Found ${count} results`;
+            if (msg && term) msg.innerHTML = `🔍 Found ${count} results`;
+            else if (msg) msg.innerHTML = '';
         }, 300);
     };
 }
@@ -274,14 +289,18 @@ function initPWA() {
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
-        document.getElementById('pwaInstallContainer').style.display = 'block';
-        document.getElementById('pwaInstallBtn').onclick = async () => { if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; if (outcome === 'accepted') document.getElementById('pwaInstallContainer').style.display = 'none'; deferredPrompt = null; } };
-        document.getElementById('pwaDismissBtn').onclick = () => { document.getElementById('pwaInstallContainer').style.display = 'none'; };
+        const container = document.getElementById('pwaInstallContainer');
+        if (container) container.style.display = 'block';
+        document.getElementById('pwaInstallBtn').onclick = async () => { if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; if (outcome === 'accepted' && container) container.style.display = 'none'; deferredPrompt = null; } };
+        document.getElementById('pwaDismissBtn').onclick = () => { if (container) container.style.display = 'none'; };
     });
 }
 
 function initOfflineMode() {
-    function update() { document.getElementById('offlineIndicator').style.display = !navigator.onLine ? 'block' : 'none'; }
+    function update() { 
+        const indicator = document.getElementById('offlineIndicator');
+        if (indicator) indicator.style.display = !navigator.onLine ? 'block' : 'none';
+    }
     window.addEventListener('online', update);
     window.addEventListener('offline', update);
     update();
@@ -289,6 +308,7 @@ function initOfflineMode() {
 
 function initLoginModal() {
     const modal = document.getElementById('loginModal');
+    if (!modal) return;
     document.getElementById('loginBtn').onclick = () => modal.classList.add('active');
     document.querySelectorAll('.close-modal').forEach(btn => btn.onclick = () => modal.classList.remove('active'));
     window.onclick = (e) => { if (e.target === modal) modal.classList.remove('active'); };
@@ -331,6 +351,25 @@ function initSidebar() {
     overlay.onclick = toggle;
 }
 
+// Weather Widget
+async function getWeather() {
+    const weatherTemp = document.getElementById('weatherTemp');
+    const weatherLocation = document.getElementById('weatherLocation');
+    const weatherDesc = document.getElementById('weatherDesc');
+    
+    if (!weatherTemp) return;
+    
+    try {
+        weatherLocation.textContent = "New Delhi, IN";
+        weatherTemp.textContent = "28°C";
+        weatherDesc.textContent = "☀️ Sunny";
+    } catch(error) {
+        weatherLocation.textContent = "Delhi, IN";
+        weatherTemp.textContent = "28°C";
+        weatherDesc.textContent = "Sunny";
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateLiveTime, 1000);
     initVoiceSearch();
@@ -349,4 +388,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderNews();
     renderTrending();
     generateAIPicks();
+    getWeather();
 });
