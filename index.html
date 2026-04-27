@@ -25,6 +25,40 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* GitHub Issues Link Button */
+        .post-news-btn {
+            background: linear-gradient(135deg, #2ea44f, #238636);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        .post-news-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46,164,79,0.4);
+        }
+        .post-news-btn i {
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            .post-news-btn span {
+                display: none;
+            }
+            .post-news-btn {
+                padding: 8px 12px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -44,6 +78,10 @@
         </div>
         
         <div class="header-right">
+            <button class="post-news-btn" id="postNewsBtn" onclick="window.open('https://github.com/themoonr4/N/issues/new?labels=news&template=news-issue.yml', '_blank')">
+                <i class="fas fa-plus-circle"></i>
+                <span>Post News</span>
+            </button>
             <div class="live-time" id="liveTime"></div>
             <div class="translate-dropdown">
                 <select id="translateSelect">
@@ -240,9 +278,7 @@
             <h2 id="legalTitle">Privacy Policy</h2>
             <span class="close-modal" onclick="closeLegalModal()">&times;</span>
         </div>
-        <div class="modal-body legal-body" id="legalBody">
-            <!-- Content loads dynamically -->
-        </div>
+        <div class="modal-body legal-body" id="legalBody"></div>
     </div>
 </div>
 
@@ -253,9 +289,7 @@
             <h2><i class="fas fa-cog"></i> Settings</h2>
             <span class="close-modal" onclick="closeSettingsModal()">&times;</span>
         </div>
-        <div class="modal-body settings-body" id="settingsBody">
-            <!-- Settings content -->
-        </div>
+        <div class="modal-body settings-body" id="settingsBody"></div>
     </div>
 </div>
 
@@ -303,8 +337,28 @@
     </div>
 </div>
 
+<script>
+    // Simple functions for modals (fallback in case main.js fails)
+    function showPage(page) {
+        const modal = document.getElementById('legalModal');
+        const title = document.getElementById('legalTitle');
+        const body = document.getElementById('legalBody');
+        if(!modal) return;
+        title.textContent = page.toUpperCase();
+        body.innerHTML = `<p>Loading ${page} content... Please refresh the page.</p>`;
+        modal.classList.add('active');
+    }
+    function closeLegalModal() {
+        const modal = document.getElementById('legalModal');
+        if(modal) modal.classList.remove('active');
+    }
+    function closeSettingsModal() {
+        const modal = document.getElementById('settingsModal');
+        if(modal) modal.classList.remove('active');
+    }
+</script>
 <script src="js/utils.js"></script>
 <script src="js/api.js"></script>
 <script src="js/main.js"></script>
 </body>
-                        </html>
+</html>
